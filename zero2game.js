@@ -6,10 +6,28 @@ $(document).ready(function() {
 	
 	var output = $("#output");
 	$(document).bind("keydown", function(event) {
+		ctx.clearRect(0,0,600,400);
+		switch(event.which) {
+			case 37: 
+				player.move(-50, 0, ctx);
+				break;
+			case 38:
+				player.move(0, -10, ctx);
+				break;
+			case 39:
+				player.move(50, 0, ctx);
+				break;
+			case 40:
+				player.move(0, 10, ctx);
+				break;
+		}
+
 		output.html(event.which);
 	});
 
 	output.html("Hi, I'm Toy and Cesar. I'm learning");
+	
+
   	
 });
 
